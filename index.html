@@ -17,18 +17,30 @@
       .container {
         padding: 8px;
       }
-      a {
-        color: red;
-      }
-      a:hover {
-        color: green;
-      }
       img {
-        border: 2px solid silver;
         border-radius: 8px;
+        width: 30%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition: box-shadow 0.5s;
       }
-      table {
-        border: 0px;
+      button {
+        background: green;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+      }
+      button:hover {
+        background: blue;
+        transition: background 2s;
+      }
+      .buttoncontainer {
+        display: flex;
+        justify-content: center;
+      }
+      .imagecontainer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
       }
       h2 {
         background: black;
@@ -37,23 +49,29 @@
           sans-serif;
         color: white;
       }
+      @media (max-width: 360px) {
+        img {
+          width: 100%;
+          margin-bottom: 8px;
+        }
+      }
     </style>
   </head>
   <body>
     <h1>Image galery</h1>
     <div class="container">
-      <table>
-        <tr>
-          <td><img src="https://loremflickr.com/320/240?random=1" /></td>
-          <td><img src="https://loremflickr.com/320/240?random=2" /></td>
-        </tr>
-        <tr>
-          <td><img src="https://loremflickr.com/320/240?random=3" /></td>
-          <td><img src="https://loremflickr.com/320/240?random=4" /></td>
-        </tr>
-      </table>
+      <div class="imagecontainer">
+        <img src="https://loremflickr.com/320/240?random=1" />
+        <img src="https://loremflickr.com/320/240?random=2" />
+        <img src="https://loremflickr.com/320/240?random=3" />
+        <img src="https://loremflickr.com/320/240?random=4" />
+      </div>
 
-      <p><a href="/">New images</a></p>
+      <p class="buttoncontainer">
+        <a href="./index.html">
+          <button>New images</button>
+        </a>
+      </p>
       <h2>Random image app by Pavel Doroshenko</h2>
     </div>
   </body>
