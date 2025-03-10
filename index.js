@@ -1,29 +1,38 @@
 const addBtnElement = document.getElementById("addBtn");
-let removeBtnElement = document.getElementById("removeBtn")
-const sliderElement = document.getElementById("slider")
-let imageElement = document.querySelectorAll("img")
+const removeBtnElement = document.getElementById("removeBtn");
+const sliderElement = document.getElementById("slider");
+const newImageElement = document.getElementById("newImg");
 
-function enabled() {
-  let imageElement = document.querySelectorAll(".img")
-  let removeBtnElement = document.getElementById("removeBtn")
-   
-  imageElement.addEventListener(".imagecontainer", function(){
-      if (imageElement.value.length < 2){
-          button.disabled = false;
-    } else {
-          button.disabled = true;
-    }
-  })
-  }
+newImageElement.addEventListener("click", function () {
+  let newImage = new Image();
+  newImage.onload = () => {
+    // Заменяем старое изображение новым
+    let oldImage = document.querySelectorAll("img");
+    oldImage.parentNode.replaceChild(newImage, oldImage);
+  };
+  newImage.src = "https://loremflickr.com/320/240?random=1" + 1++ ;
+});
 
 addBtnElement.addEventListener("click", function () {
   const newImage = document.createElement("img");
   newImage.src = "https://loremflickr.com/g/320/240/paris";
   newImage.alt = "photo 2";
-  
+
   sliderElement.appendChild(newImage);
+
+  disabledBtn();
 });
 
 removeBtnElement.addEventListener("click", function () {
   sliderElement.removeChild(sliderElement.lastChild);
+  disabledBtn();
 });
+
+function disabledBtn() {
+  let imageElement = document.querySelectorAll("img");
+  if (imageElement.length < 2) {
+    removeBtnElement.disabled = true;
+  } else {
+    removeBtnElement.disabled = false;
+  }
+}
