@@ -2,15 +2,16 @@ const addBtnElement = document.getElementById("addBtn");
 const removeBtnElement = document.getElementById("removeBtn");
 const sliderElement = document.getElementById("slider");
 const newImageElement = document.getElementById("newImg");
+const imgList = document.querySelectorAll("img");
+//for (let val of imgList) console.log(val);
+//console.log(document.body);
 
 newImageElement.addEventListener("click", function () {
-  let newImage = new Image();
-  newImage.onload = () => {
-    // Заменяем старое изображение новым
-    let oldImage = document.querySelectorAll("img");
-    oldImage.parentNode.replaceChild(newImage, oldImage);
-  };
-  newImage.src = "https://loremflickr.com/320/240?random=1" + 1++ ;
+  sliderElement.outerHTML =
+    "<div><img src=https://loremflickr.com/g/320/240/paris/><img src=https://loremflickr.com/g/320/240/paris/></div>";
+
+  //for (let val of imgList)
+  //console.log(val);
 });
 
 addBtnElement.addEventListener("click", function () {
