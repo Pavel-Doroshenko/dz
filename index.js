@@ -3,20 +3,19 @@ const removeBtnElement = document.getElementById("removeBtn");
 const sliderElement = document.getElementById("slider");
 const newImageElement = document.getElementById("newImg");
 
-newImageElement.addEventListener("click", function () {
-  sliderElement.innerHTML =
-    "<img src=https://loremflickr.com/320/240?random=5/>";
-  sliderElement.innerHTML +=
-    "<img src=https://loremflickr.com/320/240?random=6/>";
-  sliderElement.innerHTML +=
-    "<img src=https://loremflickr.com/320/240?random=7/>";
-  sliderElement.innerHTML +=
-    "<img src=https://loremflickr.com/320/240?random=8/>";
-});
+function refresh() {
+  document.querySelectorAll("img").forEach((image) => {
+    image.src =
+      "https://via.assets.so/album.png?id=1&q=95&w=360&h=360&fit=fill";
+  });
+}
+
+document.getElementById("newImg").onclick = refresh;
 
 addBtnElement.addEventListener("click", function () {
   const newImage = document.createElement("img");
-  newImage.src = "https://loremflickr.com/g/320/240/paris";
+  newImage.src =
+    "https://via.assets.so/game.png?id=1&q=95&w=360&h=360&fit=fill";
   newImage.alt = "photo 2";
 
   sliderElement.appendChild(newImage);
@@ -37,3 +36,22 @@ function disabledBtn() {
     removeBtnElement.disabled = false;
   }
 }
+
+function zoomIn(event) {
+  if (event.target.tagName === "IMG") {
+    const parent = event.target.parentElement;
+    parent.classList.toggle("fullScreen");
+  }
+  if (event.target.classList.contains("fullScreen")) {
+    event.target.classList.toggle("fullScreen");
+  }
+}
+
+function init() {
+  document.getElementById("newImg").onclick = refresh;
+  document.querySelectorAll("img").forEach((image) => {
+    image.onclick = zoomIn;
+  });
+}
+
+window.addEventListener("DOMContentLoaded", init);
