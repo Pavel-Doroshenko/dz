@@ -6,46 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML + CSS</title>
     <link rel="stylesheet" href="./index.css" />
+    <script src="index.js"></script>
   </head>
   <body>
     <h1>Image galery</h1>
     <div class="container">
-      <div class="imagecontainer" id="slider">
-        <div>
+      <div class="imagecontainer">
+        <div class="imageWrapper">
           <img
-          src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
-        />
+            src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
+          />
         </div>
-      </div>
-      <div class="imagecontainer" id="slider"></div>
-        <div>
+        <div class="imageWrapper">
           <img
-          src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
-        />
+            src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
+          />
         </div>
-      </div>
-      <div class="imagecontainer" id="slider"></div>
-        <div>
+        <div class="imageWrapper">
           <img
-          src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
-        />
+            src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
+          />
+        </div>
+        <div class="imageWrapper">
+          <img
+            src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
+          />
         </div>
       </div>
-        <div class="imagecontainer" id="slider"></div>
-          <div>
-            <img
-          src="https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill"
-        />
-          </div>
-        </div>
-      </div>
-      <p class="buttoncontainer">
-        <button id="newImg">Обновить картинки</button>
-        <button id="addBtn">Добвить картинку</button>
-        <button id="removeBtn">Удалить картинку</button>
+      <p class="buttonContainer">
+        <button class="newImg">Обновить картинки</button>
+        <button class="addBtn">Добвить картинку</button>
+        <button class="removeBtn">Удалить картинку</button>
       </p>
       <h2>Random image app by Pavel Doroshenko</h2>
     </div>
-    <script src="index.js"></script>
   </body>
 </html>
