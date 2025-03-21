@@ -6,7 +6,6 @@ function init() {
   document.querySelectorAll("img").forEach((image) => {
     image.onload = (Event) => Event.target.classList.remove("loading");
   });
-  console.log("init");
 }
 
 function refresh() {
@@ -14,7 +13,6 @@ function refresh() {
     image.src = "https://loremflickr.com/320/240?random=" + Math.random();
     image.classList.add("loading");
   });
-  console.log("refresh");
 }
 
 function zoomIn(event) {
@@ -25,7 +23,6 @@ function zoomIn(event) {
   if (event.target.classList.contains("fullScreen")) {
     event.target.classList.toggle("fullScreen");
   }
-  console.log("zoomIn");
 }
 
 function addImg() {
